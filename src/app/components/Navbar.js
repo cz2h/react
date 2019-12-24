@@ -9,9 +9,8 @@ class Navbar extends React.Component {
         return (
             <ul>
                 <li><span><Link to={'/'}>Main</Link></span></li>
-                <li><span><Link to={'/graph'}>Graph</Link></span></li>
-                <li><span><Link to={'/login'}>Login</Link></span></li>
-                <li><span><Link to={'/about'}>About</Link></span></li>
+                <li><span><Link to={'/signup'}>Login</Link></span></li>
+                <li><span><Link to={'/signin'}>Register</Link></span></li>
             </ul>
         );
     }

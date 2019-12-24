@@ -1,0 +1,43 @@
+ state = {
+    posts: [],
+    curPost: null,
+    curUser: null
+  }
+
+  componentDidMount() {
+    console.log('App mounted');
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(
+      (res) => {
+        console.log(res);
+        this.setState({
+          posts: res.data.slice(0, 10)
+        })
+      });
+
+  }
+
+  userLogin(name, pwd) {
+    console.log("Login as user :" + name);
+    this.setState({
+      curUser: {
+        "name": name,
+        "password": pwd
+      }
+    });
+  }
+
+
+    const { posts } = this.state;
+    const poList = posts.length ? (
+      posts.map(post => {
+        return (
+          <div key={post.id}>
+            <Link to={"/" + post.id}>
+              {post.id} : {post.title}
+            </Link>
+          </div>
+        )
+      })
+    ) : (
+        <div>Not Login as user</div>
+      );
