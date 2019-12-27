@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import Graphs from './Graphs'
 
 var React = require('react');
 
@@ -7,11 +8,13 @@ class Dashboard extends React.Component {
     render() {
         console.log(this.props);
         return (
-            <h1>Dashboard Page</h1>
+            <div>
+                <h1>Dashboard Page</h1>
+                <Graphs graphs={this.props} />
+            </div>
         );
     }
 };
-
 
 const mapStateToProps = (state) => {
     return {
